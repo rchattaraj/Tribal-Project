@@ -30,12 +30,12 @@
       </div>
       <div class="container">
         <div class="info">
-          <h2>Know
+          <h2 id="heading">Know
           </h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae
+            Lorem ipsum dolor sit amet consectetur adipisicing elit <br> Recusandae
             numquam quo minima <br>Commodi quod cumque dolorem optio
-            nihil nemo similique cupiditate aut, <br>soluta animi error odit,
+            nihil <br>nemo similique cupiditate aut, <br>soluta animi error odit,
             tempora hic inventore.
           </p>
           <input type="text" placeholder="Search">
@@ -60,11 +60,12 @@
         var thumbnail = document.getElementsByClassName("thumbnail")
         var back = document.getElementById("back")
         var backgroundImg = new Array( "Baul-3.jpg" , "tribe1.jpg" , "tribe4.jpg" , "tribe5.jpg" ,"tribe 2.jpg");
-        
+        var newtext = new Array("Know", "Discover", "Connect", "Help","Grow");
         let i=0;
         next.onclick = function(){
             if(i<4){
-            back.style.backgroundImage = 'url("'+backgroundImg[i+1]+'")';}
+            back.style.backgroundImage = 'url("'+backgroundImg[i+1]+'")';
+            document.getElementById("heading").innerHTML= newtext[i+1];}
             
             thumbnail[i+1].classList.add("active");
             thumbnail[i].classList.remove("active");
@@ -73,7 +74,9 @@
         }
         prev.onclick = function(){
             if(i>0){
-            back.style.backgroundImage = 'url("'+backgroundImg[i-1]+'")';}
+            back.style.backgroundImage = 'url("'+backgroundImg[i-1]+'")';
+            document.getElementById("heading").innerHTML= newtext[i-1];
+        }
             
             thumbnail[i-1].classList.add("active");
             thumbnail[i].classList.remove("active");
